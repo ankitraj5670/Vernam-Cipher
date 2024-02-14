@@ -1,34 +1,33 @@
-# Vernam Cipher Encryption and Decryption Tool
+**Text Encryption and Decryption Tool using Vernam Cipher**
 
-This is a Python application built using Tkinter that enables users to encrypt and decrypt text using the Vernam cipher, also known as the one-time pad.
+This program provides a simple graphical user interface (GUI) for encrypting and decrypting text using the Vernam Cipher. The Vernam Cipher is a symmetric key cipher where each character of the plaintext is XORed with a corresponding character from a one-time pad key.
 
-## Vernam Cipher
+### How to Use:
 
-The Vernam cipher is a symmetric key encryption algorithm where each character in the plaintext is combined with a character from a secret random key using the XOR operation. The key must be as long as the plaintext and generated using a truly random process. When implemented correctly with a truly random key, the Vernam cipher is considered unbreakable.
+1. **Installation:**
+   - Ensure you have Python installed on your system.
+   - The program utilizes the tkinter library for the GUI, which is usually included in standard Python installations.
 
-## How It Works
+2. **Execution:**
+   - Run the script.
+   - A window titled "Text Encryption and Decryption" will appear.
 
-The application generates a random key of the same length as the input text and uses it for both encryption and decryption.
+3. **Using the Application:**
+   - **Enter Text:** Input the text you wish to encrypt or decrypt in the text entry box provided.
+   - **Mode Selection:** Choose between encryption or decryption mode using the radio buttons. 
+     - **Encrypt:** Select this mode to encrypt the entered text.
+     - **Decrypt:** Select this mode to decrypt ciphertext. You must provide the decryption key for this mode.
+   - **Decryption Key:** If decrypt mode is chosen, enter the decryption key in the designated entry box.
+   - **Process:** Click the "Process" button to initiate the encryption or decryption process.
+   - **Output:** The result of the encryption or decryption operation will be displayed in the output text box.
 
-### Encryption Process
+### About the Vernam Cipher:
 
-1. The input text is converted to lowercase.
-2. A random key is generated consisting of lowercase letters and spaces, with spaces preserved in their original positions.
-3. Each character in the input text is encrypted using a bitwise XOR operation with the corresponding character in the key.
-4. The resulting ciphertext is displayed.
+- **Encryption:** In encryption mode, each character of the plaintext is combined with a corresponding character from a randomly generated key. The resulting ciphertext is produced by XORing each plaintext character with the corresponding key character.
+- **Decryption:** Decryption is performed similarly, where each character of the ciphertext is XORed with the corresponding character from the provided key to retrieve the original plaintext.
 
-### Decryption Process
+### Notes:
 
-1. Each character in the ciphertext is decrypted using the same XOR operation with the key.
-2. The decrypted characters are concatenated to form the original text.
-
-## Usage
-
-1. Enter the text you want to encrypt/decrypt in the provided text entry field.
-2. Click the "Encrypt/Decrypt" button.
-3. The encrypted text will be displayed in the "Encrypted Text" field, and the decrypted text will be displayed in the "Decrypted Text" field.
-
-## Dependencies
-
-- Python 3.x
-- Tkinter (usually included with Python distributions)
+- The program only supports basic alphanumeric characters and spaces. Other characters will be omitted from the encryption and decryption process.
+- The length of the key matches the length of the plaintext, ensuring a one-time pad for each encryption operation.
+- The GUI provides a user-friendly interface for utilizing the Vernam Cipher without needing to handle the encryption and decryption logic directly.
